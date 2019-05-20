@@ -1,0 +1,5 @@
+franco,123321,344,VISA,madera,300
+francisco,789987,443,MC,asado,180
+frasdisco,784987,442,MC,adado,130
+frasdi3co,781987,422,MC,adazo,134
+frsaisco,784987,442,VISA,adado,130
