@@ -15,7 +15,7 @@ public class Venta {
 		this.descripcion = descripcion;
 		this.monto = monto;
 		this.tarjeta = tarjeta;
-		this.socket = socket;
+		this.socket = socket; // para identificar el socket del cliente
 	}
 
 	public Socket getSocket() {
@@ -30,7 +30,7 @@ public class Venta {
 		this.descripcion = descripcion;
 		this.monto = monto;
 		this.tarjeta = tarjeta;
-		this.socket = null;
+		this.socket = null; // para identificar el tipo de venta
 	}
 
 	@Override

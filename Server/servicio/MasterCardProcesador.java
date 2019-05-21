@@ -36,8 +36,8 @@ public class MasterCardProcesador implements IProcesador {
 			this.log.bloqueError(this.sesion, "Hubo un error en la verificación de la tarjeta MC");
 			this.log.bloqueInfo(this.sesion, "Finalizando proceso de venta");
 			this.log.publicarSesion(this.sesion);
-			if(this.venta.getSocket() != null)
-				RespOnline.veriferror(this.venta.getSocket(),"Hubo un error en la verificación de la tarjeta MC");
+			if (this.venta.getSocket() != null) // verifica que sea online
+				RespOnline.veriferror(this.venta.getSocket(), "Hubo un error en la verificación de la tarjeta MC");
 			retorno = false;
 		} else {
 			this.log.bloqueInfo(this.sesion, "Finalizada la verificación de la tarjeta MC");
@@ -54,8 +54,8 @@ public class MasterCardProcesador implements IProcesador {
 			this.log.bloqueError(this.sesion, "Hubo un error en la autorización de la tarjeta MC");
 			this.log.bloqueInfo(this.sesion, "Finalizando proceso de venta");
 			this.log.publicarSesion(this.sesion);
-			if(this.venta.getSocket() != null)
-				RespOnline.auterror(this.venta.getSocket(),"Hubo un error en la verificación de la tarjeta MC");
+			if (this.venta.getSocket() != null) // verifica que sea online
+				RespOnline.auterror(this.venta.getSocket(), "Hubo un error en la verificación de la tarjeta MC");
 			retorno = false;
 		} else {
 			this.log.bloqueInfo(this.sesion, "Finalizado el proceso de autorización de la tarjeta MC");

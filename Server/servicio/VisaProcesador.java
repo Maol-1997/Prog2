@@ -37,7 +37,7 @@ public class VisaProcesador implements IProcesador {
 			this.log.bloqueError(this.sesion, "Hubo un error en la verificación de la tarjeta VISA");
 			this.log.bloqueInfo(this.sesion, "Finalizando proceso de venta");
 			this.log.publicarSesion(this.sesion);
-			if(this.venta.getSocket() != null)
+			if(this.venta.getSocket() != null) // verifica que sea online
 				RespOnline.veriferror(this.venta.getSocket(),"Hubo un error en la verificación de la tarjeta VISA");
 			retorno = false;
 		} else {
@@ -55,7 +55,7 @@ public class VisaProcesador implements IProcesador {
 			this.log.bloqueError(this.sesion, "Hubo un error en la autorización de la tarjeta VISA");
 			this.log.bloqueInfo(this.sesion, "Finalizando proceso de venta");
 			this.log.publicarSesion(this.sesion);
-			if(this.venta.getSocket() != null)
+			if(this.venta.getSocket() != null) // verifica que sea online
 				RespOnline.auterror(this.venta.getSocket(),"Hubo un error en la autorización de la tarjeta VISA");
 			retorno = false;
 		} else {
