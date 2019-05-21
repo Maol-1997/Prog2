@@ -17,7 +17,9 @@ public class HiloServidorSocket implements Runnable{
 		try {
 			BufferedReader entrada;
 			String linea;
-			entrada = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
+			while((entrada = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()))) != null) {
+			//entrada = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
+				Thread.sleep(100);
 			while((linea = entrada.readLine()) != null) {
 				log.info("Recibido de internet "+linea);
                 String[] datos = linea.split(",");
@@ -25,7 +27,11 @@ public class HiloServidorSocket implements Runnable{
                 Venta venta = new Venta(datos[4], Float.valueOf(datos[5]), tarjeta,socketCliente);
                 almacen.push(venta);
 			}
+			}
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
