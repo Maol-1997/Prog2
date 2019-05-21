@@ -27,12 +27,13 @@ public class Main {
 			// entrada
 			BufferedReader br = new BufferedReader(new FileReader("ventas2.txt"));
 			String linea;
-
+			int contador=0;
 			// salida (socket)
 			while ((linea = br.readLine()) != null) {
 				writer.println(linea);
+				contador++;
 			}
-			// cierro socket
+			// cierro archivo
 			br.close();
 
 			InputStream input = socket.getInputStream();
@@ -41,9 +42,16 @@ public class Main {
 
 			String line;
 			// respuesta del server
-			while ((line = reader.readLine()) != null) {
+			/*while ((line = reader.readLine()) != null) {
 				System.out.println(line);
 				System.out.println("\n");
+			}*/
+			int aux=0;
+			while(aux<contador) {
+				line = reader.readLine();
+				System.out.println(line);
+				System.out.println("\n");
+				aux++;
 			}
 			socket.close();
 		} catch (UnknownHostException ex) {

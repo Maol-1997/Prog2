@@ -20,6 +20,7 @@ public class HiloServidorSocket implements Runnable {
 			// pedir nuevo socket infinitamente
 			while ((entrada = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()))) != null) {
 				Thread.sleep(100);
+				entrada = new BufferedReader(new InputStreamReader(socketCliente.getInputStream()));
 				// --------------------------------
 				while ((linea = entrada.readLine()) != null) {
 					log.info("Recibido de internet " + linea);
